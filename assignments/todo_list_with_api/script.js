@@ -14,13 +14,15 @@ function showall(){
         for(let i=0; i < data.length; i++) {
             var li = document.createElement('li');
             //console.log(data[0].title)
-            
+            var status = "completed"
+
             if(data[i].completed){
-                li.setAttribute("style", "color:green")
+                li.setAttribute("style", "margin-top:5px; color:green;")
             } else{
-                li.setAttribute("style", "color:red")
+                li.setAttribute("style", "margin-top:5px; color:red;")
+                status = "incomplete"
             }
-            li.innerHTML=data[i].title
+            li.innerHTML="UserId : "+ data[i].userId + " -:- "+ "Id : " + data[i].id + " -:- " + "Title : " + data[i].title + " -:- " + "Status : " + status
             ul.append(li)
         }
     
@@ -46,7 +48,8 @@ function showcomp(){
         for(let i=0; i < data.length; i++) {
             if(data[i].completed){
                 var li = document.createElement('li');
-                li.innerHTML=data[i].title
+                li.setAttribute("style", "margin-top:5px;");
+                li.innerHTML="UserId : "+ data[i].userId + " -:- "+ "Id : " + data[i].id + " -:- " + "Title : " + data[i].title + " -:- " + "Status : completed"
                 ul.append(li)
             }
             
@@ -73,7 +76,8 @@ function showincomp(){
         for(let i=0; i < data.length; i++) {
             if(!data[i].completed){
                 var li = document.createElement('li');
-                li.innerHTML=data[i].title
+                li.setAttribute("style", "margin-top:5px;");
+                li.innerHTML="UserId : "+ data[i].userId + " -:- "+ "Id : " + data[i].id + " -:- " + "Title : " + data[i].title + " -:- " + "Status : incomplete"
                 ul.append(li)
             }
             
